@@ -18,7 +18,7 @@ class upload(upload_orig):
 setup(
     name = 'aws_checker',
     packages = find_packages(),
-    version = '1.0',
+    version = '1.1',
     description = 'List AWS resources',
     author = 'diboan',
     author_email = 'diboan@yandex.ru',
