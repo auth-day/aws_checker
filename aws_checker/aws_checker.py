@@ -9,6 +9,7 @@ from botocore.exceptions import ClientError
 ec2_name = ""
 csv_extention = ".csv"
 logging.basicConfig(level=logging.INFO)
+config_path = "/opt/aws_config.yml"
 
 def main():
     
