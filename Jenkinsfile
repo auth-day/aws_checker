@@ -32,7 +32,7 @@ node {
         sh 'source ./venv/bin/activate'
         sh 'pip install twine'
         sh 'python setup.py sdist'
-        sh 'twine upload --config-file /opt/.pypirc -r pypi  dist/*'
+        sh 'twine upload --config-file .pypirc -r pypi  dist/*'
         sh 'deactivate'
         
     }
