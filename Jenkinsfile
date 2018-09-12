@@ -26,15 +26,15 @@ node {
 //    }
     
     stage('Push to Pypi') {
-//        sh 'python setup.py sdist upload -r pypi'
-        sh 'pip install virtualenv'
-        sh 'virtualenv venv'
-        sh 'source ./venv/bin/activate'
-        sh 'pip install twine'
-        sh 'python setup.py sdist'
-        sh 'twine upload --config-file .pypirc -r pypi  dist/*'
-        sh 'deactivate'
-        
+        sh '''
+          pip install virtualenv
+          virtualenv venv
+          source ./venv/bin/activate
+          pip install twine
+          python setup.py sdist
+          twine upload --config-file .pypirc -r pypi  dist/*
+          deactivate
+        '''
     }
  
 }
