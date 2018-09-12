@@ -27,6 +27,8 @@ node {
     
     stage('Push to Pypi') {
         sh '''
+          rm -rf venv
+          rm -rf dist
           pip install virtualenv
           virtualenv venv
           source ./venv/bin/activate
