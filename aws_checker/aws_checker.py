@@ -6,6 +6,8 @@ import yaml
 import logging
 from botocore.exceptions import ClientError
 
+lkj
+
 ec2_name = ""
 csv_extention = ".csv"
 logging.basicConfig(level=logging.INFO)
