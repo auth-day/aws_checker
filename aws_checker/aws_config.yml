@@ -1,0 +1,11 @@
+aws_credentials:
+    aws_access_key_id: ""
+    aws_secret_access_key: ""
+    aws_session_token: ""
+
+file_output_path:
+    route_53_path: "/opt/"
+    s3_bucket_path: "/opt/"
+    ec2_instance_path: "/opt/"
+
+
