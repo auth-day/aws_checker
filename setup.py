@@ -2,6 +2,7 @@ from setuptools import setup, find_packages
 from distutils.command.register import register as register_orig
 from distutils.command.upload import upload as upload_orig
 from os.path import join, dirname
+import os
 from distutils.core import setup
 
 class register(register_orig):
