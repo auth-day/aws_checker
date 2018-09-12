@@ -8,12 +8,12 @@ from distutils.core import setup
 class register(register_orig):
 
     def _get_rc_file(self):
-        return os.path.join('.', '/opt/.pypirc')
+        return os.path.join('/opt/', '.pypirc')
 
 class upload(upload_orig):
 
     def _get_rc_file(self):
-        return os.path.join('.', '/opt/.pypirc')
+        return os.path.join('/opt/', '.pypirc')
 
 setup(
     name = 'aws_checker',
