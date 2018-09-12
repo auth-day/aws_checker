@@ -25,8 +25,8 @@ setup(
     include_package_data=True,
     #url = 'https://github.com/diboanches/aws_checker',
     #download_url = 'https://github.com/diboanches/aws_checker',
-    cmdclass={
-        'register': register,
-        'upload': upload,
-    }
+    #cmdclass={
+    #    'register': register,
+    #    'upload': upload,
+    #}
 )
