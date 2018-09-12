@@ -27,6 +27,7 @@ node {
     
     stage('Push to Pypi') {
 //        sh 'python setup.py sdist upload -r pypi'
+        sh 'pip install virtualenv'
         sh 'virtualenv venv'
         sh 'source ./venv/bin/activate'
         sh 'pip isntall twine'
