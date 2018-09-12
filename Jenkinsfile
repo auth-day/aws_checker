@@ -26,7 +26,7 @@ node {
 //    }
     
     stage('Push to Pypi') {
-        sh 'python setup.py sdist upload -r pypi'
+        sh 'python setup.py sdist'
     }
  
 }
