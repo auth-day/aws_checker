@@ -6,15 +6,14 @@ import yaml
 import logging
 from botocore.exceptions import ClientError
 
-lkj
 
 ec2_name = ""
 csv_extention = ".csv"
 logging.basicConfig(level=logging.INFO)
 config_path = "/opt/aws_config.yml"
 
+
 def main():
-    
     creds = get_config(config_path)
     get_ec2_instances_information(creds)
     get_s3_buckets(creds)
@@ -29,7 +28,7 @@ def get_config(config_path):
     except IOError:
         logging.info("File {} not found".format(config_path))
         sys.exit(1)
-    
+
     aws_key_id = config['aws_credentials']['aws_access_key_id']
     aws_secret_key = config['aws_credentials']['aws_secret_access_key']
     route_53_file_path = config['file_output_path']['route_53_path']
@@ -37,15 +36,15 @@ def get_config(config_path):
     s3_bucket_file_path = config['file_output_path']['s3_bucket_path']
     s3_file_name = s3_bucket_file_path + "s3-buckets.csv"
     ec2_instance_file_path = config['file_output_path']['ec2_instance_path']
-    return aws_key_id, aws_secret_key, route53_file_name, s3_file_name, ec2_instance_file_path
+    return aws_key_id, aws_secret_key, route53_file_name,
+    s3_file_name, ec2_instance_file_path
 
 
 def get_route53_records(creds):
-    
+
     aws_key_id = creds[0]
     aws_secret_key = creds[1]
     route53_file_name = creds[2]
-    
 
     result = []
 
@@ -80,11 +79,9 @@ def get_route53_records(creds):
 
 def get_s3_buckets(creds):
 
-
     aws_key_id = creds[0]
     aws_secret_key = creds[1]
     s3_file_name = creds[3]
-
 
     result = []
 
@@ -111,11 +108,9 @@ def get_s3_buckets(creds):
 
 def get_ec2_instances_information(creds):
 
-
     aws_key_id = creds[0]
     aws_secret_key = creds[1]
     ec2_instance_file_path = creds[4]
-
 
     session = boto3.Session(
         aws_access_key_id=aws_key_id,
