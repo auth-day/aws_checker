@@ -30,7 +30,7 @@ node {
         sh 'pip install virtualenv'
         sh 'virtualenv venv'
         sh 'source ./venv/bin/activate'
-        sh 'pip isntall twine'
+        sh 'pip install twine'
         sh 'python setup.py sdist'
         sh 'twine --config-file /opt/.pypirc upload dist/*'
         
