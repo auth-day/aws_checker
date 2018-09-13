@@ -51,7 +51,7 @@ def get_route53_records(creds):
     if os.path.exists(route53_file_name):
         os.remove(route53_file_name)
         logging.info(
-            "Previous file " + route53_file_name + " have been deleted")
+            "Previous file {} have been deleted".format(route53_file_name))
 
     route53 = boto3.client(
         'route53',
@@ -88,7 +88,7 @@ def get_s3_buckets(creds):
     if os.path.exists(s3_file_name):
         os.remove(s3_file_name)
         logging.info(
-            "Previous file " + s3_file_name + " have been deleted")
+            "Previous file {} have been deleted".format(s3_file_name))
 
     s3 = boto3.resource(
         's3',
@@ -128,8 +128,11 @@ def get_ec2_instances_information(creds):
         if os.path.exists(ec2_instance_file_path + region + csv_extention):
             os.remove(ec2_instance_file_path + region + csv_extention)
             logging.info(
-                "Previous file " + ec2_instance_file_path
-                + region + csv_extention + " have been deleted")
+                "Previous file {} \
+                {} {} have been deleted".format(
+                    ec2_instance_file_path,
+                    region,
+                    csv_extention))
 
         ec2 = boto3.resource(
             'ec2', region_name=region,
